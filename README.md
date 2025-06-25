@@ -104,7 +104,7 @@ Sistem ini dikembangkan menggunakan framework Laravel dan dirancang untuk memban
 
 ## Kontributor
 
-- Fanna S
+- Fauzan 
 
 ## Lisensi
 
