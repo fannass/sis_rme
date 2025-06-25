@@ -1,66 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Rekam Medis Elektronik (SIS-RME)
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/Laravel-10.x-red" alt="Laravel Version">
+  <img src="https://img.shields.io/badge/PHP-8.1+-blue" alt="PHP Version">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
 </p>
 
-## About Laravel
+## Tentang Aplikasi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sistem Rekam Medis Elektronik (SIS-RME) adalah aplikasi berbasis web yang dirancang untuk mengelola data rekam medis pasien secara elektronik. Aplikasi ini memungkinkan dokter dan staf medis untuk mencatat, menyimpan, dan mengakses informasi medis pasien dengan mudah, cepat, dan aman.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sistem ini dikembangkan menggunakan framework Laravel dan dirancang untuk membantu praktik dokter, klinik, dan fasilitas kesehatan dalam mengelola rekam medis pasien dan meningkatkan efisiensi pelayanan kesehatan.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fitur Utama
 
-## Learning Laravel
+- **Manajemen Pasien**: Pendaftaran, pencarian, dan pengelolaan data pasien
+- **Rekam Medis**: Pencatatan riwayat pemeriksaan, diagnosis, dan pengobatan
+- **Manajemen Dokter**: Pendaftaran dan pengelolaan akun dokter
+- **Manajemen Praktik**: Pengaturan jadwal dan informasi tempat praktik
+- **Laporan**: Pembuatan dan pencetakan laporan pemeriksaan dalam format PDF
+- **Multi-level Akses**: Pembagian hak akses sesuai peran (admin, dokter)
+- **Keamanan Data**: Perlindungan data pasien sesuai standar keamanan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Teknologi
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Framework**: Laravel 10.x
+- **Database**: MySQL
+- **Frontend**: Blade Template, Tailwind CSS
+- **Autentikasi**: Laravel Breeze
+- **PDF Generation**: DomPDF
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Persyaratan Sistem
 
-## Laravel Sponsors
+- PHP 8.1 atau lebih tinggi
+- Composer
+- MySQL Database
+- Web Server (Apache/Nginx)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Instalasi
 
-### Premium Partners
+1. Clone repositori:
+   ```bash
+   git clone https://github.com/fannass/sis_rme.git
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+2. Masuk ke direktori proyek:
+   ```bash
+   cd sis_rme
+   ```
 
-## Contributing
+3. Install dependensi PHP:
+   ```bash
+   composer install
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Salin file .env.example menjadi .env:
+   ```bash
+   cp .env.example .env
+   ```
 
-## Code of Conduct
+5. Generate application key:
+   ```bash
+   php artisan key:generate
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. Konfigurasi database di file .env
 
-## Security Vulnerabilities
+7. Jalankan migrasi dan seeder:
+   ```bash
+   php artisan migrate --seed
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+8. Link storage:
+   ```bash
+   php artisan storage:link
+   ```
 
-## License
+9. Jalankan server:
+   ```bash
+   php artisan serve
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+10. Akses aplikasi melalui browser: `http://localhost:8000`
+
+## Akun Default
+
+### Administrator
+- Email: admin@admin.com
+- Password: admin123
+
+### Dokter
+- Email: budi@dokter.com
+- Password: dokter123
+
+## Struktur Aplikasi
+
+- **/app/Http/Controllers**: Controller untuk logika aplikasi
+- **/app/Models**: Model untuk interaksi dengan database
+- **/database/migrations**: Skema database
+- **/database/seeders**: Data awal untuk database
+- **/resources/views**: Template tampilan (Blade)
+- **/routes**: Definisi rute aplikasi
+
+## Kontributor
+
+- Fanna S
+
+## Lisensi
+
+Sistem Rekam Medis Elektronik (SIS-RME) adalah perangkat lunak open-source yang dilisensikan di bawah [Lisensi MIT](https://opensource.org/licenses/MIT).
