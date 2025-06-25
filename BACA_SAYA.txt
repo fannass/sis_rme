@@ -1,0 +1,119 @@
+===============================================
+SISTEM REKAM MEDIS - PRAKTIK DOKTER
+Dokumentasi Instalasi dan Penggunaan
+===============================================
+
+[PERSYARATAN SISTEM]
+- XAMPP dengan PHP 8.1 atau lebih tinggi
+- Composer (https://getcomposer.org/)
+- Node.js & NPM (https://nodejs.org/)
+
+[LANGKAH INSTALASI]
+1. Extract file zip "rekam_medis_pfs_teori.zip" ke:
+   C:\xampp\htdocs\rekam_medis_pfs_teori
+
+2. Buka XAMPP Control Panel:
+   - Start Apache
+   - Start MySQL
+
+3. Buat database:
+   - Buka http://localhost/phpmyadmin
+   - Buat database baru dengan nama: rekam_medis_pfs_teori
+
+4. Buka Command Prompt sebagai Administrator
+   Masuk ke direktori project:
+   cd C:\xampp\htdocs\rekam_medis_pfs_teori
+
+5. Install dependencies:
+   composer install
+   npm install
+
+6. Siapkan environment:
+   copy .env.example .env
+   php artisan key:generate
+
+7. Setting database di .env:
+   DB_DATABASE=rekam_medis_pfs_teori
+   DB_USERNAME=root
+   DB_PASSWORD=
+
+8. Migrasi dan isi data awal:
+   php artisan migrate:fresh --seed
+
+9. Build assets:
+   npm run dev
+
+10. Jalankan aplikasi:
+    php artisan serve
+
+11. Buka browser, akses:
+    http://localhost:8000
+
+[AKUN DEFAULT]
+1. Admin
+   Email: admin@admin.com
+   Password: admin123
+
+2. Dokter
+   - Dr. Budi Santoso
+     Email: budi@dokter.com
+     Password: dokter123
+   
+   - Dr. Siti Rahayu
+     Email: siti@dokter.com
+     Password: dokter123
+   
+   - Dr. Ahmad Hidayat
+     Email: ahmad@dokter.com
+     Password: dokter123
+
+[DATA SEEDER LAINNYA]
+1. Data Praktik:
+   - Klinik Sehat (Jl. Raya No. 1)
+   - RS Sejahtera (Jl. Utama No. 10)
+
+[TROUBLESHOOTING]
+1. Jika composer error:
+   composer install --ignore-platform-reqs
+
+2. Jika npm error:
+   - Hapus folder node_modules
+   - Hapus file package-lock.json
+   - npm install
+
+3. Jika database error:
+   - php artisan config:clear
+   - php artisan migrate:fresh --seed
+
+4. Jika tampilan error:
+   npm run dev
+
+5. Jika masih error:
+   - php artisan cache:clear
+   - php artisan view:clear
+   - php artisan config:clear
+   - composer dump-autoload
+
+[FITUR UTAMA]
+- Dashboard Admin & Dokter
+- Manajemen Data Pasien
+- Pencatatan Rekam Medis
+- Pemeriksaan Pasien
+- Export PDF Rekam Medis
+- Filter & Pencarian Data
+
+[ANGGOTA KELOMPOK]
+1. fauzan - 2311501035
+2. [Nama] - [NIM]
+3. [Nama] - [NIM]
+
+[KONTAK]
+Jika ada pertanyaan, silakan hubungi:
+WhatsApp: [nomor]
+Email: [email]
+
+===============================================
+Dibuat untuk memenuhi tugas mata kuliah pfs teori
+Program Studi teknologi informasi
+universitas aisyiyah yogyakarta
+=============================================== 

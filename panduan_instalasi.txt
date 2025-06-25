@@ -1,0 +1,70 @@
+PANDUAN INSTALASI SISTEM REKAM MEDIS KLINIK POTROWANGSAN
+======================================================
+
+A. PERSIAPAN
+------------
+1. Install XAMPP (versi terbaru)
+2. Install Composer
+3. Install Node.js
+
+B. LANGKAH INSTALASI
+-------------------
+1. Extract file zip rekam_medis_pfs_teori ke folder:
+   C:\xampp\htdocs\
+
+2. Buka XAMPP Control Panel
+   - Start Apache
+   - Start MySQL
+
+3. Buat database baru
+   - Buka http://localhost/phpmyadmin
+   - Buat database dengan nama: rekam_medis_pfs_teori
+
+4. Buka Command Prompt (CMD)
+   - Ketik: cd C:\xampp\htdocs\rekam_medis_pfs_teori
+   - Ketik: composer install
+   - Ketik: npm install
+   - Ketik: copy .env.example .env
+   - Ketik: php artisan key:generate
+   - Ketik: php artisan migrate --seed
+   (Seeder akan mengisi data awal: AdminSeeder, DokterSeeder, dan PraktikSeeder)
+
+5. Jalankan aplikasi
+   - Di CMD pertama ketik: php artisan serve
+   - Buka CMD baru, ketik: npm run dev
+   - Buka browser: http://localhost:8000
+
+C. AKUN LOGIN
+------------
+1. Admin
+   Email    : admin@admin.com
+   Password : admin123
+
+2. Dokter (Data dari DokterSeeder)
+   - Dr. Budi Santoso
+     Email    : budi@dokter.com
+     Password : dokter123
+   - Dr. Siti Rahayu
+     Email    : siti@dokter.com
+     Password : dokter123
+   - Dr. Ahmad Hidayat
+     Email    : ahmad@dokter.com
+     Password : dokter123
+
+D. DATA AWAL
+-----------
+1. Praktik (dari PraktikSeeder)
+   - Nama: Klinik potrowangsan sehat sejahtera
+   - Alamat: potrowangsan sidoarum godean sleman
+   - Telepon: 08123456789
+
+E. TROUBLESHOOTING
+----------------
+1. Jika composer error:
+   - Ketik: composer install --ignore-platform-reqs
+
+2. Jika ada error permission:
+   - Ketik: chmod -R 777 storage bootstrap/cache
+
+3. Jika database error:
+   - Ketik: php artisan migrate:fresh --seed 

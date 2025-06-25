@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* Sidebar Styles */
+    .sidebar {
+        @apply fixed left-0 top-0 h-full w-64 bg-white shadow-lg z-40;
+        @apply transition-transform duration-300 ease-in-out;
+    }
+
+    .sidebar.collapsed {
+        @apply w-20;
+    }
+
+    /* Toggle Button Styles */
+    .sidebar button {
+        @apply transition-all duration-300 ease-in-out;
+    }
+
+    .sidebar.collapsed button {
+        @apply rotate-180;
+    }
+
+    /* Main Content Styles */
+    .main-content {
+        @apply ml-64 min-h-screen bg-gray-100;
+        @apply transition-[margin] duration-300 ease-in-out;
+    }
+
+    .main-content.collapsed {
+        @apply ml-20;
+    }
+
+    /* Navbar Styles */
+    .main-navbar {
+        @apply bg-white border-b border-gray-200 sticky top-0 z-30;
+        @apply transition-all duration-300 ease-in-out;
+        height: 64px; /* Fixed height for navbar */
+    }
+
+    /* Content Wrapper */
+    .content-wrapper {
+        @apply py-6 px-4 sm:px-6 lg:px-8;
+        margin-top: 0; /* Remove default margin */
+        min-height: calc(100vh - 64px); /* Viewport height minus navbar height */
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .sidebar {
+            @apply -translate-x-full;
+        }
+
+        .sidebar.open {
+            @apply translate-x-0 w-64;
+        }
+
+        .main-content {
+            @apply ml-0;
+        }
+
+        .main-content.collapsed {
+            @apply ml-0;
+        }
+    }
+
+    /* Navigation Item Styles */
+    .nav-item {
+        @apply flex items-center px-4 py-2.5 text-gray-700 rounded-lg hover:bg-red-50;
+        @apply transition-colors duration-200;
+    }
+
+    .nav-item.active {
+        @apply bg-red-50 text-red-600;
+    }
+
+    .nav-icon {
+        @apply w-5 h-5;
+    }
+
+    .nav-text {
+        @apply ml-3 font-medium;
+    }
+}
+
+/* Custom styles for dashboard */
+.dashboard-card {
+    @apply bg-white p-4 sm:p-6 rounded-xl border border-gray-200;
+    @apply transition-shadow duration-300 ease-in-out;
+    @apply hover:shadow-lg;
+}
+
+.dashboard-icon {
+    @apply p-3 rounded-lg text-2xl;
+}
+
+.dashboard-stat {
+    @apply text-xl sm:text-2xl font-bold text-gray-800;
+}
+
+.dashboard-label {
+    @apply text-sm text-gray-600 font-medium;
+}
+
+/* Better focus states */
+.focus-visible:focus {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* Sidebar shadow */
+.sidebar-shadow {
+    @apply shadow-lg;
+}
